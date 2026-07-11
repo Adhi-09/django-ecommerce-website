@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+     <nav>
+        
+
+        <div class="right-nav">
+
+            <a href="/">Home</a>
+
+            <a href="/cart/">Cart</a>
+
+            <a href="/orders/">Orders</a>
+
+        </div>
+    </nav>
+    <div class="product-details">
+
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+    <div class="pprice">
+        <h1>{{ product.name }}</h1>
+
+        <h2>₹{{ product.price }}</h2>
+        <div class="features">
+            <span class="feature">🚚 Free Delivery</span>
+            <span class="feature">🔄 7 Day Return</span>
+            <span class="feature">⭐ Top Rated</span>
+        </div>
+        <p>{{ product.description }}</p>
+
+        <a href="/add-to-cart/{{ product.id }}/">
+            <button class="add-cart-btn">Add to Cart</button>
+        </a>
+         <a href="/checkout/">
+
+            <button class="add-cart-btn">
+
+                Buy Now
+
+            </button>
+
+        </a>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cart</title>
+
+ <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        
+
+        <div class="right-nav">
+
+            <a href="/">Home</a>
+
+        </div>
+    </nav>
+    <h1 class="cart-title">Your Cart</h1>
+
+    {% if cart_items %}
+    <div class="cart-container">
+        {% for item in cart_items %}
+
+        <div class="cart-card">
+
+            <img src="{{ item.product.image.url }}" width="200">
+            <div class="cart-info">
+                <h2>{{ item.product.name }}</h2>
+
+                <h3>₹{{ item.product.price }}</h3>
+
+                <h4>Quantity: {{ item.quantity }}</h4>
+
+                <h4>Subtotal: ₹{{ item.subtotal }}</h4>
+                <div class="cart-buttons">
+                    <a href="/add-to-cart/{{ item.product.id }}/">
+
+                        <button class="btn btn-success">+</button>
+
+                    </a>
+
+                    <a href="/remove-from-cart/{{ item.product.id }}/">
+
+                        <button class="btn btn-danger">-</button>
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="checkout-section">
+        <h2>Total: ₹{{ total }}</h2>
+
+        <a href="/checkout/">
+
+            <button class="buy-btn">
+
+                Buy Now
+
+            </button>
+
+        </a>
+    </div>
+
+    {% else %}
+    <div class="empty-cart">
+
+    <div class="empty-cart-icon">🛒</div>
+
+    <h2>Your Cart is Empty</h2>
+
+    <p>Looks like you haven't added any products yet.</p>
+
+    <a href="/">
+        <button class="shop-btn">Continue Shopping</button>
+    </a>
+
+</div>
+    {% endif %}
+
+</body>
+
+</html>

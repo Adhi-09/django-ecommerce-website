@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+
+
+     background: linear-gradient(135deg,
+            #667eea,
+            #764ba2
+            );
+
+}
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+h1{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:40px;
+
+    font-size:40px;
+}
+
+.order-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+    transition:0.3s;
+}
+
+.order-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.order-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:2px solid #eee;
+
+    padding-bottom:15px;
+
+    margin-bottom:15px;
+}
+
+.order-header h2{
+
+    color:#141e30;
+}
+
+.price{
+
+    background:#28a745;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+.order-details p{
+
+    margin:12px 0;
+
+    color:#555;
+
+    font-size:17px;
+
+    line-height:1.6;
+}
+
+.empty-orders{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+}
+
+.empty-orders h2{
+
+    color:#141e30;
+
+    margin-bottom:15px;
+}
+
+.empty-orders p{
+
+    color:#666;
+}
+
+@media(max-width:768px){
+
+    .order-header{
+
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    h1{
+
+        font-size:30px;
+    }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(11, 1, 31, 0.4);
+
+    padding: 10px 40px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.right-nav {
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+.right-nav a {
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+    display: inline-block;
+
+    transition: 0.3s;
+}
+
+
+.right-nav a:hover {
+    background-color: #ffc107;
+
+    color: black;
+
+    transform: scale(1.1);
+}
